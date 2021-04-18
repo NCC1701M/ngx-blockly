@@ -10,9 +10,8 @@ export abstract class CustomBlock extends Block {
     private _args: any[];
 
 
-    constructor(type: string, block: any, blockMutator: BlockMutator, ...args: any[]) {
+    constructor(type: string, blockMutator?: BlockMutator, ...args: any[]) {
         super(type);
-        this._block = block;
         this._blockMutator = blockMutator;
         this._args = args;
     }

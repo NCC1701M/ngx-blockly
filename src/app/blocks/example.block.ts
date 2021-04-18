@@ -1,11 +1,12 @@
-import { BlockMutator, CustomBlock } from 'ngx-blockly';
+import { CustomBlock } from '../../../projects/ngx-blockly/src/lib/ngx-blockly/models/custom-block';
+import { BlockMutator } from '../../../projects/ngx-blockly/src/lib/ngx-blockly/models/block-mutator';
 
 declare var Blockly: any;
 
 export class ExampleBlock extends CustomBlock {
 
-    constructor(block: any, blockMutator: BlockMutator) {
-        super('example_block', block, blockMutator);
+    constructor(blockMutator: BlockMutator) {
+        super('example_block', blockMutator);
         this.class = ExampleBlock;
     }
 

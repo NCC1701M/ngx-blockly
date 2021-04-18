@@ -1,4 +1,4 @@
-import { BlockMutator } from 'ngx-blockly';
+import { BlockMutator } from '../../../projects/ngx-blockly/src/lib/ngx-blockly/models/block-mutator';
 import { CustomMutator } from './custom-mutator';
 
 declare var Blockly: any;

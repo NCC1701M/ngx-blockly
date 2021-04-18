@@ -15,6 +15,8 @@ import {
 } from '../../projects/ngx-blockly/src/lib/ngx-blockly/services/ngx-toolbox-builder.service';
 import { Separator } from '../../projects/ngx-blockly/src/lib/ngx-blockly/models/separator';
 import { NgxBlocklyToolbox } from '../../projects/ngx-blockly/src/lib/ngx-blockly/plugins/ngx-blockly.toolbox';
+import { CustomBlock } from '../../projects/ngx-blockly/src/lib/ngx-blockly/models/custom-block';
+import { Category } from '../../projects/ngx-blockly/src/lib/ngx-blockly/models/category';
 
 declare var Blockly: any;
 
@@ -27,8 +29,8 @@ export class AppComponent {
 
     public readonly = false;
 
-    public customBlocks = [
-        new ExampleBlock(null, new ExampleMutator('example_mutator'))
+    public customBlocks: CustomBlock[] = [
+        new ExampleBlock(new ExampleMutator('example_mutator'))
     ];
 
     public config: any = {
@@ -62,6 +64,7 @@ export class AppComponent {
 
     constructor(ngxToolboxBuilder: NgxToolboxBuilderService) {
         ngxToolboxBuilder.nodes = [
+            new Category('test', null, this.customBlocks),
             LOGIC_CATEGORY,
             LOOP_CATEGORY,
             MATH_CATEGORY,
